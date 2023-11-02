@@ -8,7 +8,7 @@
       "schematics": {},
       "root": "projects/tasks",
       "sourceRoot": "projects/tasks/src",
-      "prefix": "app",
+      "prefix": "tasks",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
@@ -25,7 +25,7 @@
               "projects/tasks/src/assets"
             ],
             "styles": [
-              "projects/tasks/src/styles.css"
+              "projects/tasks/src/style/styles.css"
             ],
             "scripts": []
           },
@@ -87,7 +87,7 @@
               "projects/tasks/src/assets"
             ],
             "styles": [
-              "projects/tasks/src/styles.css"
+              "projects/tasks/src/style/styles.css"
             ],
             "scripts": []
           }
