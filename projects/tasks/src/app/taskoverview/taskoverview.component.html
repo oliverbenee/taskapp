@@ -1,0 +1,45 @@
+<p>taskoverview works!</p>
+
+<!--p>{{type}} task: {{taskName}}. status: {{status}}</p-->
+
+
+<!-- HIDE? -->
+<button (click)="toggle()">Toggle list</button>
+
+<!-- [innerText]="status" = Equivalent to document.getElementById("status") = status-->
+<!--div [hidden]="tasksHidden">
+  <div [innerText]="status"></div>
+</div-->
+
+<!-- Use hidden button to hide. But we can also delete the element if everything is completed, which saves resources.-->
+<div *ngIf="getTasksLength() > 0" [hidden]="tasksHidden">
+  Todo list:
+  <!-- {{taskSummary}} -->
+  <table>
+    <th>taskindex</th><th>type</th><th>task description</th><th>completed</th>
+    <tr *ngFor="let task of tasks.summary; let i=index;"
+        [ngClass] = "task.completed ? 'complete' : 'incomplete'" >
+      <td>{{ i }}</td>
+      <td>{{task.type | uppercase}}</td> <!-- The pipe, or '|' ensure that we get the content in uppercase.-->
+      <td>{{task.description | titlecase}}</td>
+      <td>{{task.completed}}</td>
+      <td><button (click)="task.completed = !task.completed"> Toggle status</button></td>
+    </tr>
+  </table>
+</div>
+
+
+
+<!-- Cool message in case we are done-->
+<div *ngIf='getTasksOfState(false) === 0'>
+  <h1> All Done B)</h1>
+  <img src="https://3.bp.blogspot.com/_FklZWHg2nYI/SjFcWH8rQcI/AAAAAAAAANY/dKWYZF7Eiao/w1200-h630-p-k-no-nu/pausefisk.jpg">
+</div>
+
+<!-- Statistics -->
+<h2> Statistics</h2>
+<table>
+  <tr><td>Todo</td><td><div [innerHTML]="getTasksOfState(false)"></div></td></tr>
+  <tr><td>Completed</td><td><div [innerHTML]="getTasksOfState(true)"></div></td></tr>
+  <tr><td>Total</td><td><div [innerHTML]="getTasksLength()"></div></td></tr>
+</table>
