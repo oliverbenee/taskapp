@@ -1,0 +1,14 @@
+<h2> Add a new task </h2>
+<form #myForm="ngForm" (ngSubmit)="submitForm()">
+
+  <label for="taskDescription">Description: </label>
+  <input type="text" name="taskDescription" [(ngModel)]="taskDescription">
+
+  <label for="taskType">Task Type:</label>
+  <div>
+    <label> <input type="radio" name="taskType" value="daily" [(ngModel)]="selectedTaskType"> Daily </label>
+    <label> <input type="radio" name="taskType" value="weekly" [(ngModel)]="selectedTaskType"> Weekly </label>
+  </div>
+
+  <button type="submit">Submit</button>
+</form>

@@ -9,11 +9,13 @@ import { TaskoverviewComponent } from '../taskoverview/taskoverview.component';
 
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule } from '@angular/forms';
+import { TaskFormComponent } from '../task-form/task-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TaskoverviewComponent
+    TaskoverviewComponent,
+    TaskFormComponent
   ],
   imports: [
     BrowserModule,

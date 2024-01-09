@@ -1,7 +1,7 @@
-type taskType = 'daily' | 'weekly' | 'other'
+export type TaskType = 'daily' | 'weekly' | 'other'
 
 export interface Task {
-  type: taskType
+  type: TaskType
   description: string
   completed: boolean
 }
