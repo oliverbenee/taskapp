@@ -1,15 +1,15 @@
 <div class="todo-app-wrapper">
   <!-- Statistics -->
   <div>
-      <h2> Task list overview: </h2>
-      <table class="container">
-        <th> Todo: <div [innerHTML]="getTasksOfState(false)"></div>
-        </th>
-        <th> Completed: <div [innerHTML]="getTasksOfState(true)"></div>
-        </th>
-        <th> Total: <div [innerHTML]="getTasksLeft()"></div>
-        </th>
-      </table>
+    <h2> Task list overview: </h2>
+    <table class="container">
+      <th> Todo: <div [innerHTML]="getTasksOfState(false)"></div>
+      </th>
+      <th> Completed: <div [innerHTML]="getTasksOfState(true)"></div>
+      </th>
+      <th> Total: <div [innerHTML]="getTasksLeft()"></div>
+      </th>
+    </table>
   </div>
 
   <!-- Use hidden button to hide. But we can also delete the element if everything is completed, which saves resources.-->
@@ -18,13 +18,15 @@
   <!-- Task list! -->
   <div *ngIf="getTasksLeft() > 0" [hidden]="tasksHidden">
     <table>
-      <th>Task no. </th> <th>Type </th> <th>Description</th>
+      <th>Task no. </th>
+      <th>Type </th>
+      <th>Description</th>
 
       <tr *ngFor="let task of taskSummary; let i=index" [ngClass]="task.completed ? 'complete' : 'incomplete'">
         <td>{{ i }}</td>
 
         <!-- The pipe, or '|' ensure that we get the content in uppercase.-->
-        <td>{{task.type | uppercase}}</td> 
+        <td>{{task.type | uppercase}}</td>
         <td>{{task.description | titlecase}}</td>
 
         <td><button (click)="task.completed = !task.completed"> Toggle status</button></td>
@@ -53,5 +55,6 @@
 <!-- Cool message in case we are done-->
 <div *ngIf='getTasksOfState(false) === 0'>
   <h1> All Done B)</h1>
-  <img src="https://3.bp.blogspot.com/_FklZWHg2nYI/SjFcWH8rQcI/AAAAAAAAANY/dKWYZF7Eiao/w1200-h630-p-k-no-nu/pausefisk.jpg">
+  <img
+    src="https://3.bp.blogspot.com/_FklZWHg2nYI/SjFcWH8rQcI/AAAAAAAAANY/dKWYZF7Eiao/w1200-h630-p-k-no-nu/pausefisk.jpg">
 </div>

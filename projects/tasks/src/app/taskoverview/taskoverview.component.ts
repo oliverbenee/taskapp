@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Task } from './tasks';
+import { Task } from '../model/tasks'
 
 @Component({
   selector: 'tasks-taskoverview',

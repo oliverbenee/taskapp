@@ -8,6 +8,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TaskoverviewComponent } from '../taskoverview/taskoverview.component';
 import { TasktabheaderComponent } from '../tasktabheader/tasktabheader.component';
 
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { FormsModule } from '@angular/forms';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,7 +20,9 @@ import { TasktabheaderComponent } from '../tasktabheader/tasktabheader.component
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    TasktabheaderComponent
+    TasktabheaderComponent,
+    FlexLayoutModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
