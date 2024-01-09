@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { TaskoverviewComponent } from '../taskoverview/taskoverview.component';
-import { TasktabheaderComponent } from '../tasktabheader/tasktabheader.component';
 
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule } from '@angular/forms';
@@ -20,7 +19,6 @@ import { FormsModule } from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    TasktabheaderComponent,
     FlexLayoutModule,
     FormsModule
   ],

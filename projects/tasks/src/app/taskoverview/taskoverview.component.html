@@ -1,16 +1,14 @@
 <div class="todo-app-wrapper">
   <!-- Statistics -->
-  <div>
-    <h2> Task list overview: </h2>
-    <table class="container">
-      <th> Todo: <div [innerHTML]="getTasksOfState(false)"></div>
-      </th>
-      <th> Completed: <div [innerHTML]="getTasksOfState(true)"></div>
-      </th>
-      <th> Total: <div [innerHTML]="getTasksLeft()"></div>
-      </th>
-    </table>
-  </div>
+  <h2> Task list overview: </h2>
+  <table class="container">
+    <th> Todo: <div [innerHTML]="getTasksOfState(false)"></div>
+    </th>
+    <th> Completed: <div [innerHTML]="getTasksOfState(true)"></div>
+    </th>
+    <th> Total: <div [innerHTML]="getTasksLeft()"></div>
+    </th>
+  </table>
 
   <!-- Use hidden button to hide. But we can also delete the element if everything is completed, which saves resources.-->
   <button (click)="toggle()">Toggle list</button>

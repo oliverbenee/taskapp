@@ -25,7 +25,7 @@
               "projects/tasks/src/assets"
             ],
             "styles": [
-              "@angular/material/prebuilt-themes/indigo-pink.css",
+              "@angular/material/prebuilt-themes/deeppurple-amber.css",
               "./node_modules/ngx-bootstrap/datepicker/bs-datepicker.css",
               "./node_modules/bootstrap/dist/css/bootstrap.min.css",
               "projects/tasks/src/style/styles.css"
@@ -90,10 +90,11 @@
               "projects/tasks/src/assets"
             ],
             "styles": [
-              "@angular/material/prebuilt-themes/indigo-pink.css",
+              "@angular/material/prebuilt-themes/deeppurple-amber.css",
               "projects/tasks/src/style/styles.css"
             ],
-            "scripts": []
+            "scripts": [],
+            "karmaConfig": "projects/tasks/karma.conf.js"
           }
         }
       }
