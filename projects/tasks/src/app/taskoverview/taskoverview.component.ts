@@ -28,7 +28,7 @@ export class TaskoverviewComponent implements OnInit {
     summary: this.taskSummary
   }
 
-  getTasksLength() { return this.taskSummary.length }
+  getTasksLeft() { return this.taskSummary.length }
 
   getTasksOfState(state: true | false) {
     let count = 0;
