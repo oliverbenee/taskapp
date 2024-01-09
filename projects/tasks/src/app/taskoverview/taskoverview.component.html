@@ -1,30 +1,51 @@
 <div class="todo-app-wrapper">
   <!-- Statistics -->
-  <h2> Task list overview: </h2>
-  <h3> Todo: <div [innerHTML]="getTasksOfState(false)"></div></h3>
-  <h3> Completed: <div [innerHTML]="getTasksOfState(true)"></div></h3>
-  <h3> Total: <div [innerHTML]="getTasksLeft()"></div></h3>
-
-  <button (click)="toggle()">Toggle list</button>
+  <div>
+      <h2> Task list overview: </h2>
+      <table class="container">
+        <th> Todo: <div [innerHTML]="getTasksOfState(false)"></div>
+        </th>
+        <th> Completed: <div [innerHTML]="getTasksOfState(true)"></div>
+        </th>
+        <th> Total: <div [innerHTML]="getTasksLeft()"></div>
+        </th>
+      </table>
+  </div>
 
   <!-- Use hidden button to hide. But we can also delete the element if everything is completed, which saves resources.-->
+  <button (click)="toggle()">Toggle list</button>
+
+  <!-- Task list! -->
   <div *ngIf="getTasksLeft() > 0" [hidden]="tasksHidden">
     <table>
-      <th>taskindex</th> <th>type</th> <th>task description</th> <th>completed</th>
+      <th>Task no. </th> <th>Type </th> <th>Description</th>
 
-      <tr *ngFor="let task of tasks.summary; let i=index;" [ngClass]="task.completed ? 'complete' : 'incomplete'">
+      <tr *ngFor="let task of taskSummary; let i=index" [ngClass]="task.completed ? 'complete' : 'incomplete'">
         <td>{{ i }}</td>
 
         <!-- The pipe, or '|' ensure that we get the content in uppercase.-->
         <td>{{task.type | uppercase}}</td> 
         <td>{{task.description | titlecase}}</td>
-        <td>{{task.completed}}</td>
 
         <td><button (click)="task.completed = !task.completed"> Toggle status</button></td>
       </tr>
     </table>
   </div>
-  <button class="clearbtn"> CLEAR </button>
+
+  <form #myForm="ngForm" (ngSubmit)="submitForm(myForm)">
+
+    <label for="description">Description: </label>
+    <input type="text" id="description" name="description" ngModel>
+
+    <div>
+      <label> Type: </label>
+      <label><input type="radio" name="type" value="daily" ngModel> Daily </label>
+      <label><input type="radio" name="type" value="weekly" ngModel> Weekly </label>
+    </div>
+
+    <button type="submit">Submit</button>
+  </form>
+
 </div>
 
 

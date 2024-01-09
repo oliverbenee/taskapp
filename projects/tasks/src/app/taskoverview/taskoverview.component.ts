@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { TaskList, Task } from './tasks';
+import { Task } from './tasks';
 
 @Component({
   selector: 'tasks-taskoverview',
@@ -12,21 +12,14 @@ export class TaskoverviewComponent implements OnInit {
   // show tasks?
   status = false
 
-  // Task fields. 
+  // Initial tasks. Follow model Task in tasks.ts
   task: Task = { type: 'daily', description: 'gå en tur', completed: false }
-
   taskSummary: Task[] = [
     this.task,
     { type: "daily", description: "vaske op", completed: false },
-    { type: "daily", description: "støvsuge", completed: false }
+    { type: "daily", description: "støvsuge", completed: false },
+    { type: "weekly", description: "ansøgninger", completed: false }
   ]
-
-  tasks: TaskList = {
-    completed: 1,
-    todo: 2,
-    total: this.taskSummary.length,
-    summary: this.taskSummary
-  }
 
   getTasksLeft() { return this.taskSummary.length }
 
@@ -39,8 +32,20 @@ export class TaskoverviewComponent implements OnInit {
     return count
   }
 
+  submitForm(form: any): void {
+    // Access the form values using ngModel
+    let taskToAdd: Task = {
+      type: form.value.type,
+      description: form.value.description,
+      completed: false
+    }
+
+    // Use the values as needed (e.g., update a field)
+    this.taskSummary.push(taskToAdd)
+  }
+
   // Hide task list toggle. 
-  tasksHidden = false;
+  tasksHidden = true;
   toggle() { this.tasksHidden = !this.tasksHidden; }
 
   ngOnInit(): void { }
