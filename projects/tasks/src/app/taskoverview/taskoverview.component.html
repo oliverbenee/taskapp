@@ -16,38 +16,19 @@
   <button (click)="toggle()">Toggle list</button>
 
   <!-- Task list! -->
+
   <div *ngIf="getTasksLeft() > 0" [hidden]="tasksHidden">
-    <table>
-      <th>Task no. </th>
-      <th>Type </th>
-      <th>Description</th>
+    <div *ngFor="let task of tasks; let i=index" [ngClass]="task.completed ? 'complete' : 'incomplete'">
 
-      <tr *ngFor="let task of taskSummary; let i=index" [ngClass]="task.completed ? 'complete' : 'incomplete'">
-        <td>{{ i }}</td>
+      <div> <strong>id: </strong> {{ i }}</div>
+      <!-- The pipe, or '|' ensure that we get the content in uppercase.-->
+      <div> <strong>Type:</strong> {{ task.type | titlecase}} </div>
+      <div> <strong>Description:</strong> {{ task.description }} </div>
+      <div> <strong>Completed:</strong> {{ task.completed ? 'Yes' : 'No' | uppercase}} </div>
+      <div> <button (click)="task.completed = !task.completed"> Toggle status </button> </div>
 
-        <!-- The pipe, or '|' ensure that we get the content in uppercase.-->
-        <td>{{task.type | uppercase}}</td>
-        <td>{{task.description | titlecase}}</td>
-
-        <td><button (click)="task.completed = !task.completed"> Toggle status</button></td>
-      </tr>
-    </table>
-  </div>
-
-  <form #myForm="ngForm" (ngSubmit)="submitForm(myForm)">
-
-    <label for="description">Description: </label>
-    <input type="text" id="description" name="description" ngModel>
-
-    <div>
-      <label> Type: </label>
-      <label><input type="radio" name="type" value="daily" ngModel> Daily </label>
-      <label><input type="radio" name="type" value="weekly" ngModel> Weekly </label>
     </div>
-
-    <button type="submit">Submit</button>
-  </form>
-
+  </div>
 </div>
 
 
