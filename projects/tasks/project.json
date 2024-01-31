@@ -1,0 +1,100 @@
+{
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "name": "tasks",
+  "projectType": "application",
+  "generators": {},
+  "sourceRoot": "projects/tasks/src",
+  "prefix": "tasks",
+  "targets": {
+    "build": {
+      "executor": "@angular-devkit/build-angular:browser",
+      "options": {
+        "outputPath": "dist/tasks",
+        "index": "projects/tasks/src/index.html",
+        "main": "projects/tasks/src/main.ts",
+        "polyfills": [
+          "zone.js"
+        ],
+        "tsConfig": "projects/tasks/tsconfig.app.json",
+        "assets": [
+          "projects/tasks/src/favicon.ico",
+          "projects/tasks/src/assets"
+        ],
+        "styles": [
+          "@angular/material/prebuilt-themes/deeppurple-amber.css",
+          "./node_modules/ngx-bootstrap/datepicker/bs-datepicker.css",
+          "./node_modules/bootstrap/dist/css/bootstrap.min.css",
+          "projects/tasks/src/style/styles.css"
+        ],
+        "scripts": []
+      },
+      "configurations": {
+        "production": {
+          "budgets": [
+            {
+              "type": "initial",
+              "maximumWarning": "500kb",
+              "maximumError": "1mb"
+            },
+            {
+              "type": "anyComponentStyle",
+              "maximumWarning": "2kb",
+              "maximumError": "4kb"
+            }
+          ],
+          "outputHashing": "all"
+        },
+        "development": {
+          "buildOptimizer": false,
+          "optimization": false,
+          "vendorChunk": true,
+          "extractLicenses": false,
+          "sourceMap": true,
+          "namedChunks": true
+        }
+      },
+      "defaultConfiguration": "production",
+      "outputs": [
+        "{options.outputPath}"
+      ]
+    },
+    "serve": {
+      "executor": "@angular-devkit/build-angular:dev-server",
+      "configurations": {
+        "production": {
+          "browserTarget": "tasks:build:production"
+        },
+        "development": {
+          "browserTarget": "tasks:build:development"
+        }
+      },
+      "defaultConfiguration": "development"
+    },
+    "extract-i18n": {
+      "executor": "@angular-devkit/build-angular:extract-i18n",
+      "options": {
+        "browserTarget": "tasks:build"
+      }
+    },
+    "test": {
+      "executor": "@angular-devkit/build-angular:karma",
+      "options": {
+        "polyfills": [
+          "zone.js",
+          "zone.js/testing"
+        ],
+        "tsConfig": "projects/tasks/tsconfig.spec.json",
+        "assets": [
+          "projects/tasks/src/favicon.ico",
+          "projects/tasks/src/assets"
+        ],
+        "styles": [
+          "@angular/material/prebuilt-themes/deeppurple-amber.css",
+          "projects/tasks/src/style/styles.css"
+        ],
+        "scripts": [],
+        "karmaConfig": "projects/tasks/karma.conf.js"
+      }
+    }
+  }
+}
