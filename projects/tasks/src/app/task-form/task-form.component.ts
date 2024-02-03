@@ -8,7 +8,7 @@ import { Task, TaskType } from '../model/tasks';
 
 export class TaskFormComponent {
   selectedTaskType: TaskType = 'other'; // Variable to store the selected task type
-  taskDescription: string = 'null';
+  taskDescription: string = '';
 
   @Output() addTask = new EventEmitter<Task>();
 

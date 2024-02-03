@@ -3,12 +3,14 @@
 
   <label for="taskDescription">Description: </label>
   <input type="text" name="taskDescription" [(ngModel)]="taskDescription">
+  <div></div>
 
   <label for="taskType">Task Type:</label>
   <div>
     <label> <input type="radio" name="taskType" value="daily" [(ngModel)]="selectedTaskType"> Daily </label>
     <label> <input type="radio" name="taskType" value="weekly" [(ngModel)]="selectedTaskType"> Weekly </label>
+    <label> <input type="radio" name="taskType" value="other" [(ngModel)]="selectedTaskType"> Other </label>
   </div>
 
-  <button type="submit">Submit</button>
+  <button type="submit" [disabled]="taskDescription === ''">Submit</button>
 </form>
