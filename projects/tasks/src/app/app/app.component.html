@@ -1,7 +1,7 @@
 <div class="todo-app-wrapper">
   <tasks-task-form (addTask)="onAddTask($event)" />
   <!-- listen for addTask events, and call onAddTask in the AppComponent-->
-  <tasks-taskoverview [tasks]="taskList" />
+  <tasks-task-list [tasks]="taskList" />
   <!-- bind the taskList property to app-task-list component to view all changes to it. -->
 
 </div>

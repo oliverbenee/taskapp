@@ -3,24 +3,23 @@ import { Task } from '../model/tasks'
 import { TaskService } from '../service/task.service';
 
 @Component({
-  selector: 'tasks-taskoverview',
-  templateUrl: './taskoverview.component.html',
-  styleUrls: ['./taskoverview.component.css']
+  selector: 'tasks-task-list',
+  templateUrl: './task-list.component.html',
+  styleUrls: ['./task-list.component.css']
 })
 
-export class TaskoverviewComponent {
+export class TaskListComponent {
   status = false // show tasks toggle. 
 
   // Initial tasks. Follow model Task in tasks.ts
   task: Task = { type: 'daily', description: 'gå en tur', completed: false }
+  task2: Task = { type: "daily", description: "vaske op", completed: false }
+  task3: Task = { type: "daily", description: "støvsuge", completed: false }
+  task4: Task = { type: "weekly", description: "ansøgninger", completed: false }
 
   @Input()
-  tasks: Task[] = [
-    this.task,
-    { type: "daily", description: "vaske op", completed: false },
-    { type: "daily", description: "støvsuge", completed: false },
-    { type: "weekly", description: "ansøgninger", completed: false }
-  ]
+  tasks: Task[] = []
+
 
   constructor(private taskService: TaskService) { }
   ngOnInit(): void {

@@ -42,44 +42,44 @@
   "fileMap": {
     "nonProjectFiles": [
       {
+        "file": ".editorconfig",
+        "hash": "6686520031028425313"
+      },
+      {
         "file": "nx.json",
         "hash": "8303808598462883023"
-      },
-      {
-        "file": "README.md",
-        "hash": "12854227367136030763"
-      },
-      {
-        "file": ".vscode/extensions.json",
-        "hash": "12343942279124280405"
-      },
-      {
-        "file": ".vscode/tasks.json",
-        "hash": "5336636969995539451"
       },
       {
         "file": "package.json",
         "hash": "8539799378267330775"
       },
       {
-        "file": ".editorconfig",
-        "hash": "6686520031028425313"
+        "file": ".vscode/tasks.json",
+        "hash": "5336636969995539451"
       },
       {
         "file": ".gitignore",
         "hash": "13044518069027839699"
       },
       {
+        "file": "README.md",
+        "hash": "12854227367136030763"
+      },
+      {
         "file": "package-lock.json",
         "hash": "5831166750175233475"
+      },
+      {
+        "file": ".vscode/launch.json",
+        "hash": "17038929134016848735"
       },
       {
         "file": "tsconfig.json",
         "hash": "1047940026627514556"
       },
       {
-        "file": ".vscode/launch.json",
-        "hash": "17038929134016848735"
+        "file": ".vscode/extensions.json",
+        "hash": "12343942279124280405"
       }
     ],
     "projectFileMap": {
@@ -136,11 +136,11 @@
         },
         {
           "file": "projects/tasks/src/app/app/app.component.html",
-          "hash": "16471583927525922548"
+          "hash": "15340406703453164839"
         },
         {
           "file": "projects/tasks/src/app/app/app.component.spec.ts",
-          "hash": "4647778426004951299",
+          "hash": "13648391419581957071",
           "deps": [
             "npm:@angular/core",
             "npm:@angular/router",
@@ -158,7 +158,7 @@
         },
         {
           "file": "projects/tasks/src/app/app/app.module.ts",
-          "hash": "8667984311030824662",
+          "hash": "16108284526844626400",
           "deps": [
             "npm:@angular/core",
             "npm:@angular/platform-browser",
@@ -188,7 +188,7 @@
         },
         {
           "file": "projects/tasks/src/app/task-form/task-form.component.html",
-          "hash": "10851342254842019140"
+          "hash": "2056319985688720512"
         },
         {
           "file": "projects/tasks/src/app/task-form/task-form.component.spec.ts",
@@ -201,28 +201,6 @@
         {
           "file": "projects/tasks/src/app/task-form/task-form.component.ts",
           "hash": "2852910272537314362",
-          "deps": [
-            "npm:@angular/core"
-          ]
-        },
-        {
-          "file": "projects/tasks/src/app/taskoverview/taskoverview.component.css",
-          "hash": "9782307866569205640"
-        },
-        {
-          "file": "projects/tasks/src/app/taskoverview/taskoverview.component.html",
-          "hash": "1942985196245850609"
-        },
-        {
-          "file": "projects/tasks/src/app/taskoverview/taskoverview.component.spec.ts",
-          "hash": "643298813803344571",
-          "deps": [
-            "npm:@angular/core"
-          ]
-        },
-        {
-          "file": "projects/tasks/src/app/taskoverview/taskoverview.component.ts",
-          "hash": "13299882893623299217",
           "deps": [
             "npm:@angular/core"
           ]
@@ -257,6 +235,28 @@
         {
           "file": "projects/tasks/tsconfig.spec.json",
           "hash": "8046768446203215749"
+        },
+        {
+          "file": "projects/tasks/src/app/task-list/task-list.component.css",
+          "hash": "9782307866569205640"
+        },
+        {
+          "file": "projects/tasks/src/app/task-list/task-list.component.html",
+          "hash": "1942985196245850609"
+        },
+        {
+          "file": "projects/tasks/src/app/task-list/task-list.component.ts",
+          "hash": "16059163884365053701",
+          "deps": [
+            "npm:@angular/core"
+          ]
+        },
+        {
+          "file": "projects/tasks/src/app/task-list/task-list.component.spec.ts",
+          "hash": "16741226076983780848",
+          "deps": [
+            "npm:@angular/core"
+          ]
         }
       ]
     }

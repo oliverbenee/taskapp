@@ -7,7 +7,7 @@ import { By } from '@angular/platform-browser';
 import { Task } from '../model/tasks';
 import { FormsModule } from '@angular/forms';
 import { TaskFormComponent } from '../task-form/task-form.component';
-import { TaskoverviewComponent } from '../taskoverview/taskoverview.component';
+import { TaskListComponent } from '../task-list/task-list.component';
 
 let mockTask: Task = { type: "daily", description: "vaske op", completed: false }
 
@@ -23,7 +23,7 @@ describe('AppComponent', () => {
 
     // configuration of the test fixture. Use the Mock. 
     TestBed.configureTestingModule({
-      declarations: [AppComponent, TaskFormComponent, TaskoverviewComponent],
+      declarations: [AppComponent, TaskFormComponent, TaskListComponent],
       providers: [{ provide: TaskService, useValue: taskServiceSpy }],
       imports: [FormsModule]
     });
