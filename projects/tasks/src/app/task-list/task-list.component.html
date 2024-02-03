@@ -16,16 +16,17 @@
   <!-- Task list! -->
 
   <div *ngIf="getTasksLeft() > 0" [hidden]="tasksHidden">
-    <div *ngFor="let task of tasks; let i=index"
+    <div *ngFor="let task of tasks | orderBy: 'description'; let i = index"
       [ngClass]="{'task-item': true, 'complete': task.completed, 'incomplete': !task.completed}">
 
-      <div> <strong>id: </strong> {{ i }}</div>
-      <!-- The pipe, or '|' ensure that we get the content in uppercase.-->
-      <div> <strong>Type:</strong> {{ task.type | titlecase}} </div>
-      <div> <strong>Description:</strong> {{ task.description }} </div>
-      <div> <strong>Completed:</strong> {{ task.completed ? 'Yes' : 'No' | uppercase}} </div>
-      <div> <button (click)="task.completed = !task.completed"> Toggle status </button> </div>
-
+      <div>
+        <div> <strong>id: </strong> {{ i }}</div>
+        <!-- The pipe, or '|' ensure that we get the content in uppercase.-->
+        <div> <strong>Type:</strong> {{ task.type | titlecase}} </div>
+        <div> <strong>Description:</strong> {{ task.description }} </div>
+        <div> <strong>Completed:</strong> {{ task.completed ? 'Yes' : 'No' | uppercase}} </div>
+        <div> <button (click)="task.completed = !task.completed"> Toggle status </button> </div>
+      </div>
     </div>
   </div>
 </div>
