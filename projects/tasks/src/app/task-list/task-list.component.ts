@@ -28,7 +28,7 @@ export class TaskListComponent {
     this.taskService.tasks$.subscribe(tasks => this.tasks = tasks)
   }
 
-  getTasksLeft() { return this.tasks.length }
+  getTasksLength() { return this.tasks.length }
 
   getTasksOfState(state: true | false) {
     let count = 0;

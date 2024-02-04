@@ -6,7 +6,7 @@
     </th>
     <th> Completed: <div [innerHTML]="getTasksOfState(true)"></div>
     </th>
-    <th> Total: <div [innerHTML]="getTasksLeft()"></div>
+    <th> Total: <div [innerHTML]="getTasksLength()"></div>
     </th>
   </table>
 
@@ -15,7 +15,7 @@
 
 
   <!-- Task list! -->
-  <div *ngIf="getTasksLeft() > 0" [hidden]="tasksHidden">
+  <div *ngIf="getTasksLength() > 0" [hidden]="tasksHidden">
     <div *ngFor="let task of tasks | orderLexicographically: 'description'; let i = index"
       [ngClass]="{'task-item': true, 'complete': task.completed, 'incomplete': !task.completed}">
       <div> <strong>id: </strong> {{ i }}</div>
