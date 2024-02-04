@@ -5,8 +5,7 @@ import { Task } from '../model/tasks'
 
 @Component({
   selector: 'tasks-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  templateUrl: './app.component.html'
 })
 export class AppComponent {
   title = 'tasks';
