@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { Task } from '../model/tasks'
 import { TaskService } from '../service/task.service';
+import { OrderLexicographicallyPipe } from '../pipes/orderLexicographically.pipe';
 
 @Component({
   selector: 'tasks-task-list',
@@ -20,15 +21,12 @@ export class TaskListComponent {
   @Input()
   tasks: Task[] = []
 
-
   constructor(private taskService: TaskService) { }
   ngOnInit(): void {
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
     //Add 'implements OnInit' to the class.
     this.taskService.tasks$.subscribe(tasks => this.tasks = tasks)
   }
-
-
 
   getTasksLeft() { return this.tasks.length }
 
