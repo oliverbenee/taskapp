@@ -9,6 +9,10 @@ import { OrderLexicographicallyPipe } from '../pipes/orderLexicographically.pipe
   styleUrls: ['./task-list.component.css']
 })
 
+/**
+ * This is a Dumb component. 
+ * It just presents data. 
+ */
 export class TaskListComponent {
   status = false // show tasks toggle. 
 
