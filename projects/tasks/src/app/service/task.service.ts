@@ -9,9 +9,9 @@ export class TaskService {
   private tasksSubject = new BehaviorSubject<Task[]>([]);
   tasks$: Observable<Task[]> = this.tasksSubject.asObservable();
 
-  addTask(taskName: Task): void {
+  addTask(newTask: Task): void {
     const currentTasks = this.tasksSubject.value;
-    this.tasksSubject.next([...currentTasks, taskName]);
+    this.tasksSubject.next([...currentTasks, newTask]);
   }
 
   // Initial tasks. Follow model Task in tasks.ts

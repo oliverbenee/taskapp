@@ -19,12 +19,12 @@ export class TaskListComponent {
   @Input()
   tasks: Task[] = []
 
-  constructor(private taskService: TaskService) {
-    this.taskService.tasks$.subscribe(tasks => this.tasks = tasks)
-  }
+  constructor(private taskService: TaskService) { }
+  //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
+  //Add 'implements OnInit' to the class.
   ngOnInit(): void {
-    //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
-    //Add 'implements OnInit' to the class.
+    // Subscribe after constructor to ensure mock-objects are added.
+    this.taskService.tasks$.subscribe(tasksFromService => this.tasks = tasksFromService)
   }
 
   getTasksLength() { return this.tasks.length }
