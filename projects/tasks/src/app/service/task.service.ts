@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { BehaviorSubject, Observable, map } from 'rxjs';
 import { Task } from '../model/tasks';
+import { TaskFilterService } from './task-filter.service';
 
 @Injectable({
   providedIn: 'root',
@@ -26,5 +27,4 @@ export class TaskService {
     this.addTask(this.task3);
     this.addTask(this.task4);
   }
-
 }

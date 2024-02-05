@@ -13,6 +13,10 @@
   <!-- Use hidden button to hide. But we can also delete the element if everything is completed, which saves resources.-->
   <button (click)="toggle()">Toggle list</button>
 
+  <label for="filter"> Filter by description:</label>
+  <!-- Filter by the variable filterValue. -->
+  <input id="filter" type="text" #filterValue>
+  <button (click)="filterBy(filterValue)">Filter</button>
 
   <!-- Task list! -->
   <div *ngIf="getTasksLength() > 0" [hidden]="tasksHidden">
