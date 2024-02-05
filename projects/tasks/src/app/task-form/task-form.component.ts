@@ -6,6 +6,12 @@ import { Task, TaskType } from '../model/tasks';
   templateUrl: './task-form.component.html'
 })
 
+/**
+ * This is a Smart component. 
+ * It interacts with the service to add list content. 
+ * It interacts with the list component to add content.
+ */
+
 export class TaskFormComponent {
   selectedTaskType: TaskType = 'other'; // Variable to store the selected task type
   taskDescription: string = '';
