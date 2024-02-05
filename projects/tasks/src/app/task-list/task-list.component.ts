@@ -38,18 +38,6 @@ export class TaskListComponent {
     return count
   }
 
-  submitForm(form: any): void {
-    // Access the form values using ngModel
-    let taskToAdd: Task = {
-      type: form.value.type,
-      description: form.value.description,
-      completed: false
-    }
-
-    // Use the values as needed (e.g., update a field)
-    this.tasks.push(taskToAdd)
-  }
-
   // Hide task list toggle. 
   tasksHidden = true;
   toggle() { this.tasksHidden = !this.tasksHidden; }
